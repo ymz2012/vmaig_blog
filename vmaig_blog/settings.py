@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'vmaig_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'vmaig_blog',
+        'USER':'root',
+        'PASSWORD':'123456',
+        'HOST':'',
+        'PORT':'',
     }
 }
 
@@ -203,10 +207,10 @@ PAGE_NUM = 5
 # email配置
 # 如果想要支持ssl (比如qq邮箱) 见 https://github.com/bancek/django-smtp-ssl
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = ''                       # SMTP地址 例如: smtp.163.com
+EMAIL_HOST = 'smtp.163.com'                       # SMTP地址 例如: smtp.163.com
 EMAIL_PORT = 25                       # SMTP端口 例如: 25
-EMAIL_HOST_USER = ''                  # 我自己的邮箱 例如: xxxxxx@163.com
-EMAIL_HOST_PASSWORD = ''              # 我的邮箱密码 例如  xxxxxxxxx
+EMAIL_HOST_USER = 'ymzkoo@163.com'                  # 我自己的邮箱 例如: xxxxxx@163.com
+EMAIL_HOST_PASSWORD = 'ymz.1991413'              # 我的邮箱密码 例如  xxxxxxxxx
 EMAIL_SUBJECT_PREFIX = u'vmaig'       # 为邮件Subject-line前缀,默认是'[django]'
 EMAIL_USE_TLS = True                  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
 
@@ -218,5 +222,5 @@ QINIU_SECRET_KEY = ''
 QINIU_BUCKET_NAME = ''
 
 # 网站标题等内容配置
-WEBSITE_TITLE = u'Vmaig'
-WEBSITE_WELCOME = u'欢迎来到Vmaig'
+WEBSITE_TITLE = u'谈人生唠理想'
+WEBSITE_WELCOME = u'懂你说的 懂你没说的'
